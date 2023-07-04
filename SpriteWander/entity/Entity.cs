@@ -147,7 +147,7 @@ namespace SpriteWander.Entity
                     if (state == Animation.Walk) // Calculate direction to position before moving
                     {
                         double angle = Math.Atan2(targetY - Y, targetX - X) * (4.0 / Math.PI) + 2.25;
-                        subState = (Direction)((Math.Round(angle + 7) % 7));
+                        subState = (Direction)((Math.Round(angle + 8) % 8));
                     }
                     break;
                 case AnimEvent.Nothing:
@@ -197,8 +197,8 @@ namespace SpriteWander.Entity
                     if (rngvalue < 0.5) // Set new target position to locate
                     {
                         state = Animation.Walk;
-                        targetX = RANDOM_X;
-                        targetY = RANDOM_Y;
+                        targetX = 0;// RANDOM_X;
+                        targetY = 0;//RANDOM_Y;
                     }
                     else if (rngvalue < 0.55) state = Animation.LeapForth;
                     else if (rngvalue < 0.90) state = Animation.Sleep;
